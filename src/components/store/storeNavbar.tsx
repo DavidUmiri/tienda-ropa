@@ -29,10 +29,17 @@ export default function StoreNavbar() {
             </a>
           </li>
         </ul>
-        <div className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div
+          className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+          id="navbar"
+        >
           <ul className="navbar-nav ms-md-auto  justify-content-end">
             <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link p-0" id="iconNavbarSidenav">
+              <a
+                href="javascript:;"
+                className="nav-link p-0"
+                id="iconNavbarSidenav"
+              >
                 <div className="sidenav-toggler-inner">
                   <i className="sidenav-toggler-line bg-white"></i>
                   <i className="sidenav-toggler-line bg-white"></i>
@@ -60,4 +67,4 @@ export default function StoreNavbar() {
       </div>
     </>
   );
-};
+}

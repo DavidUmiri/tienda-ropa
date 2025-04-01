@@ -11,15 +11,14 @@ export default function TestimonialsFade({
   full_description,
   pageHeaderBgImg,
   pageHeaderMinVh,
-  pageHeaderRadius,
+  pageHeaderRadius
 }: Props) {
-
   const styles = {
     pageHeader: {
-      backgroundImage: 'url(' + pageHeaderBgImg + ')',
+      backgroundImage: "url(" + pageHeaderBgImg + ")",
       minHeight: pageHeaderMinVh,
       borderRadius: pageHeaderRadius
-    },
+    }
   } as const;
 
   return (
@@ -31,8 +30,12 @@ export default function TestimonialsFade({
             <div className="row justify-content-center">
               <div className="col-lg-8 col-sm-9 text-center mx-auto">
                 <h1 className="text-white mb-4">{title}</h1>
-                <p className="lead text-white mb-sm-6 mb-4">{full_description}</p>
-                <button className="btn btn-white btn-lg">Explore New Collection</button>
+                <p className="lead text-white mb-sm-6 mb-4">
+                  {full_description}
+                </p>
+                <button className="btn btn-white btn-lg">
+                  Explore New Collection
+                </button>
               </div>
             </div>
           </div>
@@ -40,5 +43,4 @@ export default function TestimonialsFade({
       </section>
     </>
   );
-};
-
+}

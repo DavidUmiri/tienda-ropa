@@ -1,8 +1,46 @@
-Gemfile.lock
+# Dependencias
 node_modules/
 /node_modules
-*.zip
-build-product/
-.DS_Store
-dist/
 package-lock.json
+
+# Build
+dist/
+build-product/
+.astro/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Entorno
+.env
+.env.local
+.env.development
+.env.production
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.temp/
+
+# Otros
+*.zip
+.history/

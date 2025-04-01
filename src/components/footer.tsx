@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="copyright text-center text-sm text-muted text-lg-start">
               Copyright ©{" "}
               <script>document.write(new Date().getFullYear())</script>
-              &nbsp;Astro Ecommerce by 
+              &nbsp;Astro Ecommerce by
               <a
                 href="https://www.creative-tim.com"
                 className="text-dark ms-1"
@@ -63,5 +63,3 @@ export default function Footer() {
     </>
   );
 }
-
-

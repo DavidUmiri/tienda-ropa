@@ -2,10 +2,7 @@ interface Props {
   title: string;
 }
 
-export default function OrderSummary({
-
-}: Props) {
-
+export default function OrderSummary({}: Props) {
   return (
     <>
       <div className="form-group">
@@ -16,19 +13,31 @@ export default function OrderSummary({
         <div className="col-4">
           <div className="form-group">
             <label>City</label>
-            <input type="text" className="form-control" placeholder="Enter city" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter city"
+            />
           </div>
         </div>
         <div className="col-4">
           <div className="form-group">
             <label>State</label>
-            <input type="text" className="form-control" placeholder="Enter your country" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter your country"
+            />
           </div>
         </div>
         <div className="col-4">
           <div className="form-group">
             <label>Postal Code</label>
-            <input type="text" className="form-control" placeholder="Your postal code" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Your postal code"
+            />
           </div>
         </div>
       </div>

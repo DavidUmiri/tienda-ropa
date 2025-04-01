@@ -23,11 +23,7 @@
         }
       ],
       "color": "8 colors",
-      "colors": [
-        "red", 
-        "blue", 
-        "green"
-      ],
+      "colors": ["red", "blue", "green"],
       "title": "Basic Starter Pack",
       "price": 399,
       "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
@@ -174,6 +170,7 @@
       "id": "04",
       "thumb_src": "/images/suit-5.jpg",
       "thumb_alt": "iPhone_thumb",
+      "colors": ["red", "blue", "green"],
       "color": "Blue",
       "title": "iPhone",
       "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
@@ -353,14 +350,6 @@
       "phoneNumber": "(307) 682-8835"
     }
   ],
-  "shoppingCart": [
-    "01", 
-    "02", 
-    "03"
-  ],
-  "shoppingCart2": [ 
-    "02", 
-    "03",
-    "04"
-  ]
+  "shoppingCart": ["01", "02", "03"],
+  "shoppingCart2": ["02", "03", "04"]
 }

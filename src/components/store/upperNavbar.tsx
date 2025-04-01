@@ -5,22 +5,41 @@ export default function UpperNavbar() {
         <div className="container align-items-center d-flex">
           <ul className="navbar-nav">
             <li className="nav-item dropdown pe-2">
-              <a href="javascript:;" className="nav-link dropdown-toggle text-white p-0" id="dropdownCurrency" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                href="javascript:;"
+                className="nav-link dropdown-toggle text-white p-0"
+                id="dropdownCurrency"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 CAD
               </a>
-              <ul className="dropdown-menu position-absolute px-2 py-3" aria-labelledby="dropdownCurrency" data-bs-popper="static">
+              <ul
+                className="dropdown-menu position-absolute px-2 py-3"
+                aria-labelledby="dropdownCurrency"
+                data-bs-popper="static"
+              >
                 <li className="mb-2">
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a
+                    className="dropdown-item border-radius-md"
+                    href="javascript:;"
+                  >
                     <p className="mb-0">EUR</p>
                   </a>
                 </li>
                 <li className="mb-2">
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a
+                    className="dropdown-item border-radius-md"
+                    href="javascript:;"
+                  >
                     <p className="mb-0">USD</p>
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item border-radius-md" href="javascript:;">
+                  <a
+                    className="dropdown-item border-radius-md"
+                    href="javascript:;"
+                  >
                     <p className="mb-0">RON</p>
                   </a>
                 </li>
@@ -42,7 +61,7 @@ export default function UpperNavbar() {
             </ul>
           </div>
         </div>
-      </div>   
+      </div>
     </>
   );
-};
+}
