@@ -6,8 +6,13 @@ function securityPlugin() {
     name: 'vite-plugin-security',
     enforce: 'pre',
     resolveId(source, importer) {
-      if (source.includes('?raw') || source.includes('?inline')) {
-        // Validar la ruta del archivo
+      // Validar todas las variantes de consultas peligrosas
+      const hasUnsafeQuery = source.includes('?import') || 
+                            source.includes('?raw') || 
+                            source.includes('?inline') ||
+                            source.includes('.wasm?init');
+      
+      if (hasUnsafeQuery) {
         const cleanPath = source.split('?')[0];
         if (shouldDenyAccess(cleanPath)) {
           throw new Error(`Access denied to file: ${cleanPath}`);
@@ -22,21 +27,23 @@ function shouldDenyAccess(path: string) {
     /node_modules/,
     /\.env/,
     /\.git/,
-    // Agregar más patrones según sea necesario
+    /\.\./,  // Prevenir directory traversal
+    /^[@/]fs\//i,  // Bloquear acceso directo al sistema de archivos
+    /^[a-zA-Z]:\\/i // Bloquear rutas absolutas Windows
   ];
   return denyPatterns.some(pattern => pattern.test(path));
 }
 
 export default defineConfig({
-  // ...existing code...
   plugins: [
-    securityPlugin(),
-    // ...existing plugins...
+    securityPlugin()
   ],
   server: {
     fs: {
       strict: true,
-      deny: ['node_modules/**', '.env*', '.git/**']
-    }
+      allow: ['.'], // Solo permitir archivos dentro del proyecto
+      deny: ['**/.env*', '**/.git/**', '**/node_modules/**']
+    },
+    host: false // Deshabilitar acceso remoto por defecto
   }
 });
