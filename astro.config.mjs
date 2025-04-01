@@ -4,7 +4,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [react()],
   site: 'https://davidumiri.github.io',
-  base: '/astro-ecommerce',
+  base: '/tienda-ropa',
   output: 'static',
   outDir: './dist',
   build: {

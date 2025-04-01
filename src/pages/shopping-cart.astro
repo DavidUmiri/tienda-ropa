@@ -7,7 +7,7 @@ import CardProduct from "../components/products/cardProduct";
 import ShoppingCartComponent from "../components/cart/shoppingCart";
 import StoreDoubleColumn from "../components/store/storeDoubleColumn";
 
-type Product = {
+interface Product {
   id: string;
   thumb_src: string;
   thumb_alt: string;
@@ -25,32 +25,34 @@ type Product = {
   tax: number;
 }
 
-const cartItems: Product[] = data.shoppingCart.map(id => {
-  const product = data.products.find(x => x.id === id);
-  if (!product) return null;
-  return {
-    id: product.id,
-    thumb_src: product.thumb_src,
-    thumb_alt: product.thumb_alt,
-    images: product.images || [],
-    color: product.color,
-    colors: product.colors,
-    title: product.title,
-    price: product.price,
-    description: product.description,
-    size: product.size || "",
-    sizes: product.sizes
-      ? Object.entries(product.sizes).map(([key, value]) => ({
-          label: key,
-          value: value.toString()
-        }))
-      : [],
-    stock: product.stock,
-    subtotal: product.price,
-    shipping: 0,
-    tax: 0
-  };
-}).filter(Boolean) as Product[];
+const cartItems = data.shoppingCart
+  .map((id) => {
+    const product = data.products.find((x) => x.id === id);
+    return product ? {
+      id: product.id,
+      thumb_src: product.thumb_src,
+      thumb_alt: product.thumb_alt,
+      images: product.images || [],
+      color: product.color,
+      colors: product.colors,
+      title: product.title,
+      price: product.price,
+      description: product.description,
+      size: product.size || "",
+      sizes: product.sizes
+        ? Object.entries(product.sizes).map(([key, value]) => ({
+            label: key,
+            value: value.toString()
+          }))
+        : [],
+      stock: product.stock,
+      subtotal: product.price,
+      shipping: 0,
+      tax: 0
+    } : null;
+  })
+  .filter(Boolean) as Product[];
+---
 
 <Layout title="Shopping Cart">
   <main>
@@ -81,4 +83,3 @@ const cartItems: Product[] = data.shoppingCart.map(id => {
     </div>
   </main>
 </Layout>;
----
