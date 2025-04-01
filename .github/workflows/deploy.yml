@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # Asegúrate que sea 'main' o 'master' según tu rama principal
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -14,13 +14,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository using git
         uses: actions/checkout@v3
-      - name: Install, build, and upload site
+      - name: Install, build, and upload your site
         uses: withastro/action@v0
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
         with:
-          node-version: 18 # Actualizado a Node 18
-          package-manager: npm # Especifica npm como gestor de paquetes
+          name: build-artifacts
+          path: public/ # Adjust the path as needed
 
   deploy:
     needs: build
