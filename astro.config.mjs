@@ -6,7 +6,8 @@ export default defineConfig({
   site: 'https://davidumiri.github.io',
   base: '/astro-ecommerce',
   output: 'static',
+  outDir: './dist',
   build: {
-    assets: 'assets'
+    assets: '_assets'
   }
 });
